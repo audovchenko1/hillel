@@ -22,6 +22,12 @@ public class Main {
         admin.removeUser("test2@r.com");
         System.out.println(admin.getUsers());
         System.out.println(admin.usersCount());
+
+        Customer customer = new Customer("customer@r.com");
+        customer.buySomething(25);
+        customer.updateBalance(50);
+        customer.checkBalance();
+
     }
 
 }

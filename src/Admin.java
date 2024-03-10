@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class Admin {
+public class Admin extends User {
     private HashMap<String, User> users;
 
     public Admin(){
