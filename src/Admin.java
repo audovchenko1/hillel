@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class Admin extends User {
+public class Admin extends AbstractUser {
     private HashMap<String, User> users;
 
     public Admin(){
@@ -31,5 +31,11 @@ public class Admin extends User {
     int usersCount()
     {
         return this.users.size();
+    }
+
+    @Override
+    public boolean update(String firstName, String lastName, String email) {
+        log("admin type of user can not be updated");
+        return false;
     }
 }

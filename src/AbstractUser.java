@@ -1,7 +1,11 @@
-abstract public class AbstractUser {
+abstract public class AbstractUser implements UserInterface {
 
     protected String login;
     protected String password;
+
+    protected String firstName;
+
+    protected String lastName;
 
     public String getLogin() {
         return login;
@@ -35,5 +39,25 @@ abstract public class AbstractUser {
     protected void log(String message)
     {
         System.out.println(message);
+    }
+
+    @Override
+    public String getFirstName() {
+        return firstName;
+    }
+
+    @Override
+    public String getLastName() {
+        return lastName;
+    }
+
+    @Override
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    @Override
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 }

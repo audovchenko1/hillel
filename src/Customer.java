@@ -1,6 +1,25 @@
 public final class Customer extends User {
     private double balance;
 
+    public class NestedBasket {
+
+        protected double totalSum;
+
+        public NestedBasket(double totalSum)
+        {
+            this.totalSum = totalSum;
+        }
+
+        public void checkout()
+        {
+            System.out.println("Yeee-Haaa we buy something for " + totalSum + " USD!");
+        }
+
+        public double getTotalSum() {
+            return totalSum;
+        }
+    }
+
     public Customer(String login) {
         super(login);
         balance = 150.0;
@@ -31,5 +50,10 @@ public final class Customer extends User {
 
     private void log() {
         System.out.println("Customer overloaded log: " + this.getLogin());
+    }
+
+    @Override
+    public String getSomething() {
+        return "Customer something";
     }
 }

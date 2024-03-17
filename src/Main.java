@@ -28,6 +28,39 @@ public class Main {
         customer.updateBalance(50);
         customer.checkBalance();
 
+        user1.setFirstName("Adam");
+        user1.setLastName("Smith");
+
+        user2.setLastName("Damien");
+        user2.setLastName("Smith");
+
+        admin.setFirstName("Admin");
+        admin.setLastName("Admin");
+
+        customer.setFirstName("Kelvin");
+        customer.setLastName("Klein");
+
+        user1.update(
+                "Damien",
+                "Goldshtein",
+                "dam_gold@google.com"
+        );
+
+        admin.update(
+                "admin",
+                "admin",
+                "admin@admin.com"
+        );
+
+
+        UserInterface.logStatic(user1.getSomething());
+        UserInterface.logStatic(customer.getSomething());
+        UserInterface.logStatic(admin.getSomething());
+
+        Customer.NestedBasket basket = customer.new NestedBasket(55.0);
+        double totalSum = basket.getTotalSum();
+        basket.checkout();
+        customer.buySomething(totalSum);
     }
 
 }
